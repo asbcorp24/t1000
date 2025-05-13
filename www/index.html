@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">                                   <!-- Кодировка страницы -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <title>ESP32 I/O Tester</title>                         <!-- Заголовок вкладки -->
+  <!-- Bootstrap CSS -->
+  <link href="bootstrap.min.css"
+        rel="stylesheet">                                   <!-- Подключение Bootstrap -->
+</head>
+<body class="bg-light">                                   <!-- Фон страницы светло-серый -->
+  <div class="container py-4">                             <!-- Отступы вокруг контента -->
+    <!-- Навигация -->
+    <ul class="nav nav-pills mb-3" id="tabs">
+      <li class="nav-item">
+        <button class="nav-link active" data-bs-target="#tab-ref">Эталон</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-target="#tab-list">Список</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-target="#tab-test">Тест</button>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <!-- Вкладка «Эталон» -->
+      <div class="tab-pane fade show active" id="tab-ref">
+        <button id="btnRef" class="btn btn-primary">Получить эталон</button>
+      </div>
+
+      <!-- Вкладка «Список эталонов» -->
+      <div class="tab-pane fade" id="tab-list">
+        <ul id="fileList" class="list-group mb-3"></ul>       <!-- Список файлов -->
+        <input type="file" id="uploadFile" class="form-control" /> <!-- Загрузка файла -->
+      </div>
+
+      <!-- Вкладка «Тест» -->
+      <div class="tab-pane fade" id="tab-test">
+        <select id="selRef" class="form-select mb-2"></select> <!-- Выбор эталона -->
+        <button id="btnTest" class="btn btn-success mb-2">Запустить тест</button>
+        <a id="dlJson" class="btn btn-outline-secondary me-2" style="display:none">
+          Скачать JSON
+        </a>
+        <a id="dlCsv" class="btn btn-outline-secondary" style="display:none">
+          Скачать CSV
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (Popper + Bootstrap) -->
+  <script src="bootstrap.bundle.min.js"></script>
+  <!-- Ваш скрипт с логикой (app.js) -->
+  <script src="app.js"></script>
+</body>
+</html>
